@@ -77,11 +77,9 @@ function writeDoc(response) {
   - [Usage](#usage)
   - [Tests](#tests)
   - [Contributing](#contributing)
-  - [Lisence](#license)
+  ${response.license !== "none" ? `- [License](#license)` : ""}
   - [Questions](#questions)
   
-  
-${response.license !== "none" ? `- [License](#license)` : ""}
 
 ## Installation
 
@@ -104,6 +102,7 @@ ${response.tests}
 ${response.credits}
 
 ${response.license !== "none" ? `## License` : ""}
+${getBadge(response.license)}
 
 ## Questions
 
@@ -120,3 +119,23 @@ https://github.com/${response.user}`;
     }
   });
 }
+
+// function to getBade img using switch statement
+function getBadge(license) {
+    switch (license) {
+      case "MIT":
+        return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+      case "Mozilla":
+        return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]";
+      case "IBM":
+        return "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
+      case "Perl":
+        return "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]";
+      case "ISC":
+        return "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
+      case "Eclipse":
+        return "[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)";
+      case "none":
+        return "";
+    }
+  }
