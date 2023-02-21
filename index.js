@@ -61,4 +61,29 @@ inquirer
 
 // function to write readme document using template literal and fs.writeFile
 function writeDoc(response) {
-  var myReadme = ``}
+  var myReadme = `# ${response.title}
+
+  ## Description
+  
+  ${response.description}
+  
+  The application:
+  
+  ${response.description}
+  
+  ## Table of Contents
+  
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Tests](#tests)
+  - [Contributing](#contributing)
+  - [Lisence](#license)
+  - [Questions](#questions)`;
+
+  fs.writeFile("yourReadme.md", myReadme, (err) => {
+    if (err) console.log(err);
+    else {
+      console.log("Readme file has been written successfully");
+    }
+  });
+}
