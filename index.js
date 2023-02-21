@@ -55,3 +55,10 @@ inquirer
       name: "user",
     }
 ])
+.then((response) => {
+    writeDoc(response);
+  });
+
+// function to write readme document using template literal and fs.writeFile
+function writeDoc(response) {
+  var myReadme = ``}
