@@ -62,7 +62,7 @@ You will then be given a series of user prompts for information about your appli
 
 A walkthrough video can be found at: 
 <br>
-https://watch.screencastify.com/v/g7Bbh0S498nDX5j6AR3x
+https://watch.screencastify.com/v/PYZltP36ebSEqVt8fGcn
 <br>
 The repository for this project can be found on my GitHub:
 <br>
